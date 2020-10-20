@@ -1,0 +1,55 @@
+#%RAML 1.0 NamedExample
+#NOT FOR USE IN A TYPE. EXAMPLES FOR IMPLEMENTATION ONLY.
+examples:
+  success-post-generic-example:
+    header: 
+      apiName: "HR Process API"
+      apiVersion: "v1.0.0"
+      correlationId: "1jks02-sjd3aq-29iefg-392ksf-p0snvh"
+    data: 
+      message: "New Employee Created"
+      employeeId: "1974839"
+  success-get-generic-example:
+    header: 
+      apiName: "HR Process API"
+      apiVersion: "v1.0.0"
+      correlationId: "1jks02-sjd3aq-29iefg-392ksf-p0snvh"
+    data:
+      employees:
+        -
+          employeeId: "1"
+          userId: "JS001"
+          firstName: "John"
+        -
+          employeeId: "2"
+          userId: "JS002"
+          firstName: "James"
+  failure-no-details-generic-example:
+    header: 
+      apiName: "HR Process API"
+      apiVersion: "v1.0.0"
+      correlationId: "1jks02-sjd3aq-29iefg-392ksf-p0snvh"
+    error:
+      description: "An error occurred inserting the employee record."
+      code: "HR_EMP_001"
+      timestamp: "2020-01-01T00:00:01"
+      requestReference: 
+        method: "POST"
+        uri: "/employees"
+  failure-details-generic-example:
+    header: 
+      apiName: "HR Process API"
+      apiVersion: "v1.0.0"
+      correlationId: "1jks02-sjd3aq-29iefg-392ksf-p0snvh"
+    error:
+      description: "An error occurred inserting the employee record."
+      code: "HR_EMP_001"
+      timestamp: "2020-01-01T00:00:01"
+      additionalDetails: 
+        error:
+          description: "Unable to connect to Workday - Connect Timeout."
+          code: "WD_EMP_008"
+          timestamp: "2020-01-01T00:00:00"
+      requestReference: 
+        method: "POST"
+        uri: "/employees"

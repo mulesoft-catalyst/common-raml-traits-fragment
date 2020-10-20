@@ -1,0 +1,11 @@
+#%RAML 1.0 Trait
+usage: To be used on resources supporting sorting of the response collection.
+queryParameters:
+  orderBy:
+    description: "Order by fields: <<fields>>"
+    type: string
+    required: false
+  order:
+    description: Order of Sorting
+    enum: [desc, asc]
+    required: true

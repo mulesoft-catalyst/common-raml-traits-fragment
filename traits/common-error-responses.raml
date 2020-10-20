@@ -1,0 +1,121 @@
+#%RAML 1.0 Trait
+responses:
+  400:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Required field 'name' missing.",
+                "code": "400",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }
+  404:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Resource Not Found",
+                "code": "404",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }
+  405:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Method Not Allowed",
+                "code": "405",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }
+  406:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Not Acceptable.",
+                "code": "406",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }
+  500:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Internal Server Error",
+                "code": "500",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }
+  501:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Not Implemented.",
+                "code": "501",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }
+  503:
+    body:
+      application/json:
+        type: !include ../types/common-response-format.raml
+        example: |
+          {
+            "header" : {
+              "apiName": "<<apiName>>",
+              "apiVersion": "<<apiVersion>>",
+              "correlationId" : "6e560258-4e55-4839-b7d9-29c80f12263d"
+            },
+            "error" : {
+                "description" : "Service Unavailable.",
+                "code": "503",
+                "timestamp": "2020-06-15T15:13:10"
+            }
+          }

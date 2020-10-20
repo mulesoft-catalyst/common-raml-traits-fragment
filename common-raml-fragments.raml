@@ -1,0 +1,19 @@
+#%RAML 1.0 Library
+usage: Common RAML Fragments to standardise implementation of common aspects of RAML API Specifications.
+
+#Ensure no existing traits or datatypes are updated with a breaking change if possible, they could be used by any number of services that could be affected. Ensure to use semantic versioning when publishing this fragment.
+
+traits:
+  common-error-responses: !include traits/common-error-responses.raml
+  common-headers: !include traits/common-headers.raml
+  pageable: !include traits/pageable.raml
+  sortable: !include traits/sortable.raml
+  #There are 2 Rate Limited Traits here as they both specify a different success HTTP Code. Use as needed on the correct methods e.g. 200 for GET and 201 for POST.
+  rate-limited-200: !include traits/rate-limited-200.raml
+  rate-limited-201: !include traits/rate-limited-201.raml
+
+types:
+  common-response: !include types/common-response-format.raml
+
+securitySchemes:
+  clientEnforcement: !include securitySchemes/clientEnforcement.raml

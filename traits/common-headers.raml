@@ -1,0 +1,12 @@
+#%RAML 1.0 Trait
+headers:
+  x-correlation-id:
+    description: A unique transaction id used to correlate api requests end to end.
+    type: string
+    required: true
+    example: e393ef07-de7d-46c7-b514-27581be526d2
+  x-source-system:
+    type: string
+    description: A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.
+    required: false
+    example: "Salesforce Experience API"

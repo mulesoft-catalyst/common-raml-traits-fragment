@@ -1,0 +1,92 @@
+#%RAML 1.0 Trait
+usage: Apply this trait to resources which will use the Rate Limiting Policy
+
+responses:
+  201:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  400:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota 
+  401:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  404:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  405:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  406:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  429:
+    description: Too Many Requests. The number of HTTP requests exceeds the SLA limit.
+    body:
+      properties:
+        error:
+          type: string
+          example: "Quota has been exceeded"
+      example:
+        error: "Quota has been exceeded"
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  500:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  501:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota
+  503:
+    headers:
+      x-ratelimit-remaining :
+        description:   The remaining number of requests available from the quota.
+      x-ratelimit-limit :
+        description:   The maximum number of requests that can be made within a given window.
+      x-ratelimit-reset :
+        description:   The remaining time, in milliseconds, until a new window starts with the new quota

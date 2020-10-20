@@ -1,0 +1,78 @@
+#%RAML 1.0 DataType
+displayName: Common Response Format
+description: The common response format used for all API Calls.
+properties:
+  header:
+    type: object
+    description: 
+    properties:
+      apiName:
+        type: string
+        description: Name of the API
+        example: "Simple Broker API"
+        required: true
+      apiVersion:
+        type: string
+        description: Version of the API
+        example: "v1.0.0"
+        required: true
+      correlationId:
+        type: string
+        description: A unique UUID for the request.
+        required: true
+        example: "101-aaa-bbb-ccc-ddd-202"
+  data:
+    type: object
+    description: The actual data returned by the service. If the service is a GET Request, the collection or single resource entity would reside here.
+    required: false
+    example:
+      statusMessage: "Created User in Workday"
+      userId: "2294738"
+  error:
+    type: object
+    required: false
+    description: An optional object only returnED in case of an error. 
+    properties:
+      description:
+        type: string
+        description: A description of the error.
+        example: Missing required header - x-api-correlation-id
+        required: true
+      code:
+        type: string
+        description: A unique code identifying the error.
+        example: 'API_GET_001'
+        required: true
+      timestamp:
+        type: string
+        required: true
+        description: A timestamp identifying the time of the error.
+        example: "2020-01-01T00:00:01"
+      additionalDetails:
+        type: any
+        required: false
+        description: An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.
+        examples:
+          simple-string:
+            "HTTP Header x-correlation-id was provided but failed to be transmitted downstream."
+          complex-object:
+            downstream:
+              error:
+                description: "Missing required header - x-correlation-id"
+                code: "API_POST_009"
+                timestamp: "2020-01-01T00:00:01"
+      requestReference:
+        type: object
+        description: Request metadata for the request that caused the error.
+        required: false
+        properties:
+          method:
+            description: HTTP Method
+            type: string
+            example: GET
+            required: true
+          uri:
+            description: Resource URI
+            type: string
+            example: /accounts/02020202
+            required: true
